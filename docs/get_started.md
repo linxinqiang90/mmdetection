@@ -57,7 +57,7 @@ If mmcv and mmcv-full are both installed, there will be `ModuleNotFoundError`.
     PyTorch 1.5, you need to install the prebuilt PyTorch with CUDA 10.1.
 
     ```shell
-    conda install pytorch cudatoolkit=10.1 torchvision -c pytorch
+    conda install pytorch cudatoolkit=10.1.243 torchvision -c pytorch
     ```
 
     `E.g. 2` If you have CUDA 9.2 installed under `/usr/local/cuda` and would like to install
@@ -71,7 +71,9 @@ If mmcv and mmcv-full are both installed, there will be `ModuleNotFoundError`.
     you can use more CUDA versions such as 9.0.
 
 3. Install mmcv-full, we recommend you to install the pre-build package as below.
-
+    ```shell
+     CUDA_HOME=/home/linxinqiang/miniconda3/envs/open-mmlab/lib/python3.7/site-packages/torch/cuda/ pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu102/torch1.8.1/index.html
+    ```
     ```shell
     pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/{cu_version}/{torch_version}/index.html
     ```
