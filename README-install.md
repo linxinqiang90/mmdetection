@@ -7,3 +7,18 @@ pip install mmcv...
 pip install -e .
 ```
 
+#### train
+```shell
+python tools/train.py configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco_jewelry.py
+```
+#### test and inference
+```shell
+python tools/test.py configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco_jewelry.py work_dirs/faster_rcnn_r50_fpn_1x_coco_jewelry/latest.pth --eval bbox segm
+```
+####inference
+```shell
+python tools/inference.py \
+--checkpoint=work_dirs/faster_rcnn_r50_fpn_1x_coco_jewelry/latest.pth \
+--config=configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco_jewelry.py \
+--img=demo/j2/微信图片_20210602110032.jpg
+```
