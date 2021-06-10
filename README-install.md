@@ -9,7 +9,7 @@ pip install -e .
 
 #### train
 ```shell
-python tools/train.py configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco_jewelry.py
+python tools/train.py configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco_jewelry.py --resume-from work_dirs/faster_rcnn_r50_fpn_1x_coco_jewelry/epoch_769.pth
 ```
 #### test and inference
 ```shell
@@ -21,4 +21,12 @@ python tools/inference.py \
 --checkpoint=work_dirs/faster_rcnn_r50_fpn_1x_coco_jewelry/latest.pth \
 --config=configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco_jewelry.py \
 --img=demo/j2/微信图片_20210602110032.jpg
+```
+```shell
+python tools/inference_dir.py \
+--checkpoint=work_dirs/faster_rcnn_r50_fpn_1x_coco_jewelry/latest.pth \
+--config=configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco_jewelry.py \
+--img=demo/test --score-thr 0.8 \
+--checkpoint work_dirs/faster_rcnn_r50_fpn_1x_coco_jewelry/epoch_769.pth 
+
 ```

@@ -47,7 +47,7 @@ model = dict(
             in_channels=256,
             fc_out_channels=1024,
             roi_feat_size=7,
-            num_classes=4,
+            num_classes=1,
             bbox_coder=dict(
                 type='DeltaXYWHBBoxCoder',
                 target_means=[0., 0., 0., 0.],
@@ -142,7 +142,7 @@ test_pipeline = [
             dict(type='Collect', keys=['img']),
         ])
 ]
-classes = ('ring','necklace','bracelet','earing')
+classes = ('jewelry',)
 
 data = dict(
     samples_per_gpu=2,
@@ -166,4 +166,5 @@ data = dict(
         img_prefix=data_root + 'val/',
         pipeline=test_pipeline))
 evaluation = dict(interval=1,metric=['bbox'])
+checkpoint_config = dict(interval=10)
 runner = dict(type='EpochBasedRunner', max_epochs=1000000)

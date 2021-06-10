@@ -28,6 +28,9 @@ MANIFEST
 data/*train/
 data/*val/
 demo/test/
+demo/test_result/
+demo/j1/
+demo/j1_result/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
