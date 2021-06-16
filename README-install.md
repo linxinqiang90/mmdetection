@@ -40,4 +40,12 @@ python tools/analysis_tools/analyze_logs.py plot_curve work_dirs/faster_rcnn_r50
 ```shell
 pip install future tensorboard
 tensorboard --logdir=work_dirs/faster_rcnn_r50_fpn_1x_coco_jewelry/tf_logs
+#filter regex
+^(val|train)/loss$
 ```
+
+####loss
+- oss_bbox    
+一种损失，衡量模型在真实物体周围预测的边界盒的“紧密”程度（通常是回归损失，L1，smoothL1等等。）。 
+- loss_cls    
+衡量正确性的损失
