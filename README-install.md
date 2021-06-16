@@ -39,5 +39,5 @@ python tools/analysis_tools/analyze_logs.py plot_curve work_dirs/faster_rcnn_r50
 ####tensorboard
 ```shell
 pip install future tensorboard
-tensorboard --logdir=work_dirs/tf_logs
+tensorboard --logdir=work_dirs/faster_rcnn_r50_fpn_1x_coco_jewelry/tf_logs
 ```
