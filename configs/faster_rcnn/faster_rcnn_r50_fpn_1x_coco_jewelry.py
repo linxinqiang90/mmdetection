@@ -166,5 +166,5 @@ data = dict(
         img_prefix=data_root + 'val/',
         pipeline=test_pipeline))
 evaluation = dict(interval=1,metric=['bbox'])
-checkpoint_config = dict(interval=50)
+checkpoint_config = dict(interval=10)
 runner = dict(type='EpochBasedRunner', max_epochs=1000000)

@@ -35,3 +35,9 @@ python tools/inference_dir.py \
 ```shell
 python tools/analysis_tools/analyze_logs.py plot_curve work_dirs/faster_rcnn_r50_fpn_1x_coco_jewelry/20210610_102332.log.json --keys loss_cls  --legend loss_cls
 ```
+
+####tensorboard
+```shell
+pip install future tensorboard
+tensorboard --logdir=work_dirs/tf_logs
+```
