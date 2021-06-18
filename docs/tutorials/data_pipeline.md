@@ -97,7 +97,7 @@ For each operation, we list the related dict fields that are added/updated/remov
 
 - update: gt_semantic_seg
 
-`c`
+`PhotoMetricDistortion`
 
 - update: img
 

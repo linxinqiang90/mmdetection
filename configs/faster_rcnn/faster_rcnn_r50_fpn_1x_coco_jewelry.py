@@ -126,6 +126,24 @@ train_pipeline = [
         contrast_range=(0.5, 1.5),
         saturation_range=(0.5, 1.5),
         hue_delta=18),
+    dict(
+        type='AutoAugment',
+        policies=[
+            [dict(
+                 type='Rotate',
+                 level=5,
+                 img_fill_val=(124, 116, 104),
+                 prob=0.5,
+                 scale=1)
+            ],
+            [dict(type='Rotate', level=7, img_fill_val=(124, 116, 104)),
+             dict(
+                 type='Translate',
+                 level=5,
+                 prob=0.5,
+                 img_fill_val=(124, 116, 104))
+            ],
+        ]),
     dict(type='Resize', img_scale=(1333, 800), keep_ratio=True),
     dict(type='RandomFlip', flip_ratio=0.5),
     dict(type='Normalize', **img_norm_cfg),
